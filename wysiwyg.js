@@ -67,28 +67,6 @@ for (var i= 0; i<famous.length; i++) {
     output.innerHTML += newPerson;  
 }
 
-	var bio = document.getElementsByClassName("bio");
-
-  // document.body.addEventListener("click",function(event){
-  //  if(event.target.className==="personContainer"){
-  //  	console.log("add border is execute");
-   	
-  //  	//when click in anny element focus in the text box.
-  //   input.focus();
-    
-  //   //add a class to add aborder to the element
-  //   // event.target.className += " addBorder selected ";
-  //   event.target.classList.add('addBorder');
-  //   console.log("parent node after select",event.target.parentNode);
-  //   }
-  //   //remove the border when click again
-  //   else if(event.target.classList.contains("addBorder")){
-  //   	console.log("parent node",event.target.parentNode);
-  //   	event.target.classList.remove('addBorder');
-  //   	console.log('remove border is execute')
-  //   } 
-  //   });
-
 // when yo click in the element 
 //add for loop statment to loop throurh the array to check 
 //if any element has the class selected if it it will deleted if not it will add it 
@@ -108,17 +86,30 @@ document.body.addEventListener("click",function(event){
 	}
 });
 
+//if you click in the bio class which is inside the card 
+//it will grap the data to the input element and focus in it .
 document.body.addEventListener("click",function(event){
 	if (event.target.className==="bio"){
 		console.log(event);
 		input.value =event.target.innerHTML;
 		input.focus();
-		// event.target.innerHTML+=input.value;
-
 	}
-
 });
 
+	// input.addEventListener("keydown",function(){
+		
+ // 		for (var i= 0; i<famous.length; i++) {
+ // 			console.log("event.target",event.target);
+ // 			if (event.target.className==="addBorder"){
+ // 			console.log(input.value);
+
+ // 				document.getElementsByClassName('bio').innerHTML += input.value;
+ // 				console.log("add text");
+ // 			}
+ // 		}
+ 		
+ // 		// console.log(input.value);
+ // });
 
 // document.body.addEventListener("click",function(event){
 //    if(event.target.className==="personContainer"){
