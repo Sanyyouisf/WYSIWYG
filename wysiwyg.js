@@ -76,17 +76,38 @@ for (var i= 0; i<famous.length; i++) {
    	
    	//when click in anny element focus in the text box.
     input.focus();
-   
+    input.value=
     //add a class to add aborder to the element
     event.target.className += " addBorder selected ";
     }
     //remove the border when click again
     else if(event.target.parentNode.classList.contains("personContainer")){
+    	console.log("parent node",event.target.parentNode);
     event.target.parentNode.classList.remove('addBorder');
     console.log('remove border is execute')
     } 
-
     });
+
+
+// document.body.addEventListener("click",function(event){
+//    if(event.target.className==="personContainer"){
+//    	console.log("add border is execute");
+   	
+//    	//when click in anny element focus in the text box.
+//     input.focus();
+   
+//     //add a class to add aborder to the element
+//     event.target.parentNode.classList.add("addBorder");
+//     }
+//     //remove the border when click again
+//     else if(event.target.className==="personContainer addBorder"){
+//     	console.log("parent node",event.target.parentNode);
+//     event.target.className -= "addBorder";
+//     console.log('remove border is execute')
+//     } 
+//     });
+
+
 
  	input.addEventListener("keydown",function(){
  		for (var i= 0; i<famous.length; i++) {
@@ -98,7 +119,13 @@ for (var i= 0; i<famous.length; i++) {
  		
  		console.log(input.value);
  	});
+ 	
+//  	for (var i= 0; i<famous.length; i++) {
+// if (document.body.className==="bio"){
+// input.onkeyup = function(){
+//     event.target.innerHTML += input.value;	
+// }
 
-
+// }};
 
 
