@@ -1,0 +1,32 @@
+.personContainer {
+	/*border:2px black soled;*/
+	display: inline-block;
+	width: 500px;
+	height: 500px;
+    color: blue;
+}
+
+div:nth-child(2n+1) {
+    background: lightblue;
+    width: 350px;
+	height: 350px;
+	margin: 20px;
+}
+
+div:nth-child(2n) {
+    background: lightyellow;
+    width: 350px;
+	height: 350px;
+	margin: 20px;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+
+.addBorder {
+	border : 5px black dotted;
+	background-color: orange;
+}
