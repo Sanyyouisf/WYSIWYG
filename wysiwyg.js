@@ -64,29 +64,60 @@ for (var i= 0; i<famous.length; i++) {
   	newPerson+= `<image src=${famous[i].image} </section>`
   	newPerson+= `<footer> ${famous[i].lifespan.birth} - ${famous[i].lifespan.death}  </footer>`
   	newPerson+=`</div>`
-    output.innerHTML += newPerson;
-   
+    output.innerHTML += newPerson;  
 }
 
 	var bio = document.getElementsByClassName("bio");
 
-  document.body.addEventListener("click",function(event){
-   if(event.target.className==="personContainer"){
-   	console.log("add border is execute");
+  // document.body.addEventListener("click",function(event){
+  //  if(event.target.className==="personContainer"){
+  //  	console.log("add border is execute");
    	
-   	//when click in anny element focus in the text box.
-    input.focus();
-    input.value=
-    //add a class to add aborder to the element
-    event.target.className += " addBorder selected ";
-    }
-    //remove the border when click again
-    else if(event.target.parentNode.classList.contains("personContainer")){
-    	console.log("parent node",event.target.parentNode);
-    event.target.parentNode.classList.remove('addBorder');
-    console.log('remove border is execute')
-    } 
-    });
+  //  	//when click in anny element focus in the text box.
+  //   input.focus();
+    
+  //   //add a class to add aborder to the element
+  //   // event.target.className += " addBorder selected ";
+  //   event.target.classList.add('addBorder');
+  //   console.log("parent node after select",event.target.parentNode);
+  //   }
+  //   //remove the border when click again
+  //   else if(event.target.classList.contains("addBorder")){
+  //   	console.log("parent node",event.target.parentNode);
+  //   	event.target.classList.remove('addBorder');
+  //   	console.log('remove border is execute')
+  //   } 
+  //   });
+
+// when yo click in the element 
+//add for loop statment to loop throurh the array to check 
+//if any element has the class selected if it it will deleted if not it will add it 
+document.body.addEventListener("click",function(event){
+	if (event.target.className==="personContainer"){
+		var selectChildren = event.target.parentNode.children;
+		//loop through all the children of the parent node
+		for (var i= 0; i<selectChildren.length; i++) {
+			//if any one has the bodred class it delete it 
+			if (selectChildren[i].classList.contains("addBorder") ){
+				selectChildren[i].classList.remove("addBorder");
+				console.log("removeborder");
+			}
+		}
+		//then add the border to what you click in 
+		event.target.classList.add("addBorder");
+	}
+});
+
+document.body.addEventListener("click",function(event){
+	if (event.target.className==="bio"){
+		console.log(event);
+		input.value =event.target.innerHTML;
+		input.focus();
+		// event.target.innerHTML+=input.value;
+
+	}
+
+});
 
 
 // document.body.addEventListener("click",function(event){
@@ -109,23 +140,21 @@ for (var i= 0; i<famous.length; i++) {
 
 
 
- 	input.addEventListener("keydown",function(){
- 		for (var i= 0; i<famous.length; i++) {
- 			if (event.target.className==="selected"){
- 				document.getElementsByClassName('bio').innerHTML += input.value;
- 				console.log("add text");
- 			}
- 		}
- 		
- 		console.log(input.value);
- 	});
- 	
-//  	for (var i= 0; i<famous.length; i++) {
-// if (document.body.className==="bio"){
-// input.onkeyup = function(){
-//     event.target.innerHTML += input.value;	
-// }
+ // 	input.addEventListener("keydown",function(){
 
-// }};
+ // 		for (var i= 0; i<famous.length; i++) {
+ // 			console.log("event.target",event.target);
+ // 			if (event.target.className==="addBorder"){
+ // 			console.log(input.value);
+
+ // 				document.getElementsByClassName('bio').innerHTML += input.value;
+ // 				console.log("add text");
+ // 			}
+ // 		}
+ 		
+ // 		// console.log(input.value);
+ // });
+
+
 
 

@@ -1,3 +1,4 @@
+
 .personContainer {
 	/*border:2px black soled;*/
 	display: inline-block;
@@ -28,5 +29,4 @@ img {
 
 .addBorder {
 	border : 5px black dotted;
-	background-color: orange;
 }
