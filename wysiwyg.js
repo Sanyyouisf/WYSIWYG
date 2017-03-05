@@ -2,6 +2,7 @@
 var output = document.getElementById("output");
 var input = document.getElementById("input");
 var bio = document.getElementsByClassName("bio");
+var addBorder = document.getElementsByClassName("addBorder");
 //Create an array of objects that represents famous people
 var famous =[
    {
@@ -67,6 +68,7 @@ for (var i= 0; i<famous.length; i++) {
     output.innerHTML += newPerson;  
 }
 
+
 // when yo click in the element 
 //add for loop statment to loop throurh the array to check 
 //if any element has the class selected if it it will deleted if not it will add it 
@@ -78,7 +80,7 @@ document.body.addEventListener("click",function(event){
 			//if any one has the bodred class it delete it 
 			if (selectChildren[i].classList.contains("addBorder") ){
 				selectChildren[i].classList.remove("addBorder");
-				console.log("removeborder");
+				// console.log("removeborder");
 			}
 		}
 		//then add the border to what you click in 
@@ -90,61 +92,32 @@ document.body.addEventListener("click",function(event){
 //it will grap the data to the input element and focus in it .
 document.body.addEventListener("click",function(event){
 	if (event.target.className==="bio"){
-		console.log(event);
-		input.value =event.target.innerHTML;
+		input.value = event.target.innerHTML;
 		input.focus();
-	}
+	} 
 });
 
-	// input.addEventListener("keydown",function(){
+
+input.addEventListener("keypress",function(event){
+	console.log(event.target.parentNode.children.output.children.output);
 		
- // 		for (var i= 0; i<famous.length; i++) {
- // 			console.log("event.target",event.target);
- // 			if (event.target.className==="addBorder"){
- // 			console.log(input.value);
+});
 
- // 				document.getElementsByClassName('bio').innerHTML += input.value;
- // 				console.log("add text");
- // 			}
- // 		}
- 		
- // 		// console.log(input.value);
- // });
+//to clear text box when press enter
+input.addEventListener("keypress",function(event){
+	console.log(event);
+	if(event.keyCode === 13){
+		input.value = "";
+	}
+});
+	
 
-// document.body.addEventListener("click",function(event){
-//    if(event.target.className==="personContainer"){
-//    	console.log("add border is execute");
-   	
-//    	//when click in anny element focus in the text box.
-//     input.focus();
-   
-//     //add a class to add aborder to the element
-//     event.target.parentNode.classList.add("addBorder");
-//     }
-//     //remove the border when click again
-//     else if(event.target.className==="personContainer addBorder"){
-//     	console.log("parent node",event.target.parentNode);
-//     event.target.className -= "addBorder";
-//     console.log('remove border is execute')
-//     } 
-//     });
+
+	
 
 
 
- // 	input.addEventListener("keydown",function(){
 
- // 		for (var i= 0; i<famous.length; i++) {
- // 			console.log("event.target",event.target);
- // 			if (event.target.className==="addBorder"){
- // 			console.log(input.value);
-
- // 				document.getElementsByClassName('bio').innerHTML += input.value;
- // 				console.log("add text");
- // 			}
- // 		}
- 		
- // 		// console.log(input.value);
- // });
 
 
 
