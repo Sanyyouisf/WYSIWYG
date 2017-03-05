@@ -1,7 +1,6 @@
 //variables
 var output = document.getElementById("output");
 var input = document.getElementById("input");
-var bio = document.getElementsByClassName("bio");
 var addBorder = document.getElementsByClassName("addBorder");
 //Create an array of objects that represents famous people
 var famous =[
@@ -68,8 +67,7 @@ for (var i= 0; i<famous.length; i++) {
     output.innerHTML += newPerson;  
 }
 
-
-// when yo click in the element 
+// when you click in the element 
 //add for loop statment to loop throurh the array to check 
 //if any element has the class selected if it it will deleted if not it will add it 
 document.body.addEventListener("click",function(event){
@@ -80,7 +78,6 @@ document.body.addEventListener("click",function(event){
 			//if any one has the bodred class it delete it 
 			if (selectChildren[i].classList.contains("addBorder") ){
 				selectChildren[i].classList.remove("addBorder");
-				// console.log("removeborder");
 			}
 		}
 		//then add the border to what you click in 
@@ -94,18 +91,16 @@ document.body.addEventListener("click",function(event){
 	if (event.target.className==="bio"){
 		input.value = event.target.innerHTML;
 		input.focus();
+		// add the text you write to the selected dom 
+		input.addEventListener("keyup",function(){
+			 event.target.innerText = input.value;
+		});
 	} 
 });
 
 
-input.addEventListener("keypress",function(event){
-	console.log(event.target.parentNode.children.output.children.output);
-		
-});
-
 //to clear text box when press enter
 input.addEventListener("keypress",function(event){
-	console.log(event);
 	if(event.keyCode === 13){
 		input.value = "";
 	}
