@@ -20,8 +20,8 @@ var famous =[
   bio: "It is the mark of an educated mind to be able to entertain a thought without accepting it.",
   image: "http://www.thefamouspeople.com/profiles/images/aristotle-17.jpg",
   lifespan: {
-  birth: "384 BC",
-  death: "322 BC"
+  birth: 384 ,
+  death: 322 
      }
   },
   {
@@ -60,7 +60,7 @@ for (var i= 0; i<famous.length; i++) {
     newPerson="";
   	newPerson+=`<div class="personContainer" id="person-${i}">`
   	newPerson+= `<header> ${famous[i].name} -${famous[i].title}</header>`
-	newPerson+= `<section class="bio"> ${famous[i].bio}  </section>`
+	  newPerson+= `<section class="bio"> ${famous[i].bio}  </section>`
   	newPerson+= `<image src=${famous[i].image} </section>`
   	newPerson+= `<footer> ${famous[i].lifespan.birth} - ${famous[i].lifespan.death}  </footer>`
   	newPerson+=`</div>`
@@ -68,8 +68,8 @@ for (var i= 0; i<famous.length; i++) {
 }
 
 // when you click in the element 
-//add for loop statment to loop throurh the array to check 
-//if any element has the class selected if it it will deleted if not it will add it 
+//add for loop statment to loop through the array to check 
+//if any element has the class selected if so it will deleted if not it will add it 
 document.body.addEventListener("click",function(event){
 	if (event.target.className==="personContainer"){
 		var selectChildren = event.target.parentNode.children;
@@ -78,10 +78,15 @@ document.body.addEventListener("click",function(event){
 			//if any one has the bodred class it delete it 
 			if (selectChildren[i].classList.contains("addBorder") ){
 				selectChildren[i].classList.remove("addBorder");
+        // console.log("event.target.textContent :",event.target.textContent);
+
 			}
 		}
 		//then add the border to what you click in 
+    // event.target.textContent= event.target.textContent;
 		event.target.classList.add("addBorder");
+    // console.log("event.target.textContent:",event.target.textContent)
+    // console.log("event.target.innerHTML :",event.target.innerHTML);
 	}
 });
 
@@ -91,19 +96,40 @@ document.body.addEventListener("click",function(event){
 	if (event.target.className==="bio"){
 		input.value = event.target.innerHTML;
 		input.focus();
+    console.log("my event",event)
 		// add the text you write to the selected dom 
-		input.addEventListener("keyup",function(){
-			 event.target.innerText = input.value;
-		});
+		// input.addEventListener("keyup",function(){
+		// 	 event.target.innerText = input.value;
+		// });
+    writethis(event);
+    console.log("event inside",event);
+
 	} 
 });
+
+ var target= "" ;
+ // console.log("target before function",target)
+function writethis(click){
+  // console.log("click.target",click.target)
+  input.addEventListener("keyup",function(event){
+  target= click.target;
+  // console.log("target in function",target)
+  target.innerText= input.value;
+  // target.section.innerText = "";
+  console.log("target after function",target)
+  }) 
+};
+
 
 
 //to clear text box when press enter
 input.addEventListener("keypress",function(event){
+  // console.log("event.target.textContent before ",event.target);
 	if(event.keyCode === 13){
 		input.value = "";
 	}
+  console.log("input",input);
+  // deletethis(event);
 });
 	
 

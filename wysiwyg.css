@@ -1,9 +1,11 @@
 
+body {
+	background-color: #f0f8ff;
+	border: 1px solid #f0f8ff;
+}
 .personContainer {
-	/*border:2px black soled;*/
-	display: inline-block;
 	width: 500px;
-	height: 500px;
+	min-height: 400px;
     color: blue;
 }
 
@@ -12,6 +14,8 @@ div:nth-child(2n+1) {
     width: 350px;
 	height: 350px;
 	margin: 20px;
+	padding: 10px;
+	border: 1px black solid;
 }
 
 div:nth-child(2n) {
@@ -19,14 +23,29 @@ div:nth-child(2n) {
     width: 350px;
 	height: 350px;
 	margin: 20px;
+	padding: 10px;
+	border: 1px black solid;
 }
 
 img {
 	width: 200px;
 	height: 200px;
-	display: inline-block;
+	padding: 10px;
 }
 
 .addBorder {
 	border : 5px black dotted;
+}
+
+#output { 
+ 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+input[type=text] {
+	border: 1px black solid;
+	width: 300px;
+	height: 20px;
+	margin: 20px;
 }
