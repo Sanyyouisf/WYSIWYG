@@ -20,7 +20,7 @@
 - JavaScript
 
 
-![Blog Screengrab](https://raw.githubusercontent.com/nss-evening-cohort-05/chatty-scorpion-ducks/ed6e47566f6e04a8b272b0cd0b3016fbe9bc39df/ScreenGrab.PNG)
+![Blog Screengrab](https://raw.githubusercontent.com/Sanyyouisf/WYSIWYG/master/ScreenShot.png)
 
 Accessing Project
 
