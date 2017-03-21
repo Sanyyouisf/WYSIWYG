@@ -15,8 +15,8 @@ div:nth-child(2n+1) {
 	height: 350px;
 	margin: 20px;
 	padding: 10px;
-	border: 1px black solid;
-}
+/*	border: 1px black solid;
+*/}
 
 div:nth-child(2n) {
     background: lightyellow;
@@ -24,8 +24,8 @@ div:nth-child(2n) {
 	height: 350px;
 	margin: 20px;
 	padding: 10px;
-	border: 1px black solid;
-}
+/*	border: 1px black solid;
+*/}
 
 img {
 	width: 200px;

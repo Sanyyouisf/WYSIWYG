@@ -78,15 +78,10 @@ document.body.addEventListener("click",function(event){
 			//if any one has the bodred class it delete it 
 			if (selectChildren[i].classList.contains("addBorder") ){
 				selectChildren[i].classList.remove("addBorder");
-        // console.log("event.target.textContent :",event.target.textContent);
-
 			}
 		}
 		//then add the border to what you click in 
-    // event.target.textContent= event.target.textContent;
 		event.target.classList.add("addBorder");
-    // console.log("event.target.textContent:",event.target.textContent)
-    // console.log("event.target.innerHTML :",event.target.innerHTML);
 	}
 });
 
@@ -96,27 +91,17 @@ document.body.addEventListener("click",function(event){
 	if (event.target.className==="bio"){
 		input.value = event.target.innerHTML;
 		input.focus();
-    console.log("my event",event)
-		// add the text you write to the selected dom 
-		// input.addEventListener("keyup",function(){
-		// 	 event.target.innerText = input.value;
-		// });
-    writethis(event);
-    console.log("event inside",event);
-
+    writethis();
 	} 
 });
 
- var target= "" ;
- // console.log("target before function",target)
-function writethis(click){
-  // console.log("click.target",click.target)
+function writethis(){
   input.addEventListener("keyup",function(event){
-  target= click.target;
-  // console.log("target in function",target)
+  var selectedElement =document.getElementsByClassName("addBorder");
+
+  console.log("selectedElement",selectedElement[0].children[1].innerHTML)
+  var target= selectedElement[0].children[1];
   target.innerText= input.value;
-  // target.section.innerText = "";
-  console.log("target after function",target)
   }) 
 };
 
@@ -124,12 +109,9 @@ function writethis(click){
 
 //to clear text box when press enter
 input.addEventListener("keypress",function(event){
-  // console.log("event.target.textContent before ",event.target);
 	if(event.keyCode === 13){
 		input.value = "";
 	}
-  console.log("input",input);
-  // deletethis(event);
 });
 	
 
