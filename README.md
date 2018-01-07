@@ -1,5 +1,9 @@
 # WYSIWYG
-##Instructions
+
+![Blog Screengrab](https://raw.githubusercontent.com/Sanyyouisf/WYSIWYG/master/ScreenShot.png)
+
+
+## Instructions
 
 1. Create an array of objects that represents famous people (see structure below).
 2. Create a text input in your DOM.
@@ -13,6 +17,7 @@
 10. When there is a highlighted person element, and you begin typing in the input box, the person's biography should be immediately bound to what you are typing, letter by letter.
 11. When you press the enter/return key when typing in the input field, then the content of the input field should immediately be blank.
 
+
 ## Technologies
 
 - HTML5
@@ -20,11 +25,13 @@
 - JavaScript
 
 
-![Blog Screengrab](https://raw.githubusercontent.com/Sanyyouisf/WYSIWYG/master/ScreenShot.png)
-
 Accessing Project
 
 git clone https://github.com/Sanyyouisf/WYSIWYG
 cd exercise/spa/wysiwyg
 npm install http-server -g
 http-server -p 8080
+
+## Contributor
+- Sany Yousif
+ 
