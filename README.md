@@ -27,11 +27,10 @@
 
 Accessing Project
 
-git clone https://github.com/Sanyyouisf/WYSIWYG
-cd exercise/spa/wysiwyg
-npm install http-server -g
-http-server -p 8080
+ - git clone https://github.com/Sanyyouisf/WYSIWYG
+ - cd exercise/spa/wysiwyg
+ - npm install http-server -g
+ - http-server -p 8080
 
 ## Contributor
 - Sany Yousif
- 
